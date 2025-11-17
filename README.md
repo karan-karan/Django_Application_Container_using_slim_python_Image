@@ -84,13 +84,16 @@ Push to Docker Hub
 docker push karantanwar/djangoapp:latest
 ```
 
-🎉 Done!
 
+
+🎉 Done!
 Django app is now:
 
 ✅ Containerized
 ⚡ Running on EC2
 ☁️ Published on Docker Hub
+
+
 
 # ⚠️ Issue Faced: Invalid HTTP_HOST Header
 Django threw an error:
@@ -106,8 +109,7 @@ ALLOWED_HOSTS = ['13.127.255.7']
 
 
 
-
-📌 Commands Summary
+## 📌 Commands Summary
 sudo apt update
 sudo apt install docker.io -y
 systemctl status docker
@@ -120,6 +122,7 @@ docker login
 docker tag djangoapp:latest karantanwar/djangoapp:latest
 docker push karantanwar/djangoapp:latest
 
-📘 Author
+
+# 📘 Author
 
 Karan, DevOps Engineer 🚀
