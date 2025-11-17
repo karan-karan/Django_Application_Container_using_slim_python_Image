@@ -94,6 +94,21 @@ Django app is now:
 ☁️ Published on Docker Hub
 
 
+## 📌 Commands Summary
+```bash
+sudo apt update
+sudo apt install docker.io -y
+systemctl status docker
+sudo usermod -aG docker ubuntu
+sudo systemctl restart docker
+git clone <repo-url>
+docker build -t djangoapp:latest .
+docker run -d -p 80:8000 --name mydjangoapp djangoapp:latest
+docker login
+docker tag djangoapp:latest karantanwar/djangoapp:latest
+docker push karantanwar/djangoapp:latest
+```
+
 
 # ⚠️ Issue Faced: Invalid HTTP_HOST Header
 Django threw an error:
@@ -106,21 +121,6 @@ ALLOWED_HOSTS = ['*']
 OR
 To allow only your EC2 IP:
 ALLOWED_HOSTS = ['13.127.255.7']
-
-
-
-## 📌 Commands Summary
-sudo apt update
-sudo apt install docker.io -y
-systemctl status docker
-sudo usermod -aG docker ubuntu
-sudo systemctl restart docker
-git clone <repo-url>
-docker build -t djangoapp:latest .
-docker run -d -p 80:8000 --name mydjangoapp djangoapp:latest
-docker login
-docker tag djangoapp:latest karantanwar/djangoapp:latest
-docker push karantanwar/djangoapp:latest
 
 
 # 📘 Author
