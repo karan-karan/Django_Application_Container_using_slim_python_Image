@@ -4,9 +4,6 @@ This project demonstrates how to deploy a Django application inside a Docker con
 
 ---
 
-
----
-
 ## 🖥️ Step 1: Create EC2 Instance (Ubuntu)
 
 Launch an Ubuntu EC2 instance (t2.micro / free tier).
@@ -67,22 +64,8 @@ Open in browser:
 http://<EC2_PUBLIC_IP>/
 ```
 
-# ⚠️ Issue Faced: Invalid HTTP_HOST Header
-Django threw an error:
-Invalid HTTP_HOST header: '13.127.255.7:80'
-This happens because the IP is not added in ALLOWED_HOSTS in settings.py.
-
-Fix:
-To allow all hosts:
-ALLOWED_HOSTS = ['*']
-OR
-To allow only your EC2 IP:
-ALLOWED_HOSTS = ['13.127.255.7']
-
-
 ## 🐳 Step 8: Push Image to Docker Hub
 Login to Docker Hub
-
 Generate a Docker Personal Access Token:
 
 ➡️ https://hub.docker.com/settings/security
@@ -108,6 +91,21 @@ Django app is now:
 ✅ Containerized
 ⚡ Running on EC2
 ☁️ Published on Docker Hub
+
+# ⚠️ Issue Faced: Invalid HTTP_HOST Header
+Django threw an error:
+Invalid HTTP_HOST header: '13.127.255.7:80'
+This happens because the IP is not added in ALLOWED_HOSTS in settings.py.
+
+Fix:
+To allow all hosts:
+ALLOWED_HOSTS = ['*']
+OR
+To allow only your EC2 IP:
+ALLOWED_HOSTS = ['13.127.255.7']
+
+
+
 
 📌 Commands Summary
 sudo apt update
